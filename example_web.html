@@ -89,7 +89,7 @@
         }
 
         function setMode() {
-            dfu.findDevice({ services: [0x180D] })
+            dfu.findDevice({ services: ['00001530-1212-efde-1523-785feabcd123'] })
             .then(device => dfu.writeMode(device))
             .catch(log);
         }
@@ -101,7 +101,7 @@
         }
 
         function both() {
-            dfu.findDevice({ services: [0x180D] })
+            dfu.findDevice({ services: ['00001530-1212-efde-1523-785feabcd123'] })
             .then(device => dfu.writeMode(device))
             .then(device => transfer(device))
             .catch(log);
